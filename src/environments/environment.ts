@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  
+  categoryUrl: 'http://38.242.131.85:8057/api/categories',
+  
+  productUrl: 'http://38.242.131.85:8057/api/products',
+  
+  varietyUrl:  'http://38.242.131.85:8057/api/varietys',
 };
 
 /*

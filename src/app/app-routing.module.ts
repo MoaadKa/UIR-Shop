@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { BaseComponent } from './views/layout/base/base.component';
 import { AuthGuard } from './core/guard/auth.guard';
 import { ErrorPageComponent } from './views/pages/error-page/error-page.component';
+import { ProductsComponent } from './views/pages/products/products.component';
 
 
 const routes: Routes = [
   { path:'auth', loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule) },
+  { path:'home', loadChildren: () => import('./front/home/home.module').then(m => m.HomeModule)},
+
   {
     path: '',
     component: BaseComponent,
@@ -54,6 +57,20 @@ const routes: Routes = [
       },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, 
       // { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
+      {
+        path: 'products',
+        loadChildren: () => import('./views/pages/products/products.module').then(m => m.ProductsModule)
+      },
+      {
+        path: 'category',
+        loadChildren: () => import('./views/pages/category/category.module').then(m => m.CategoryModule)
+      },
+      {
+        path: 'variety',
+        loadChildren: () => import('./views/pages/variety/variety.module').then(m => m.VarietyModule)
+      },
+      
+      
     ]
   },
   { 
@@ -69,7 +86,8 @@ const routes: Routes = [
     path: 'error/:type',
     component: ErrorPageComponent
   },
-  { path: '**', redirectTo: 'error', pathMatch: 'full' }
+  { path: '**', redirectTo: 'error', pathMatch: 'full' },
+  { path: 'products', component: ProductsComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,12 @@
+<div class="container mt-3 col-md-6 offset-md-3">
+    <form [formGroup]="categoryForm" (ngSubmit)="editCategory()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" formControlName="nomCategory" class="form-control">
+        </div>
+
+
+        <button class="btn btn-outline-info" type="submit">Save</button>
+    </form>
+
+</div>
