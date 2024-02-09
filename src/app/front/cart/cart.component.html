@@ -1,0 +1,17 @@
+<p-card *ngFor="let product of cartProducts" [style]="{height: '100%',width:'300px', margin: '10px'}">
+    <h2>{{product.nomProduct}}</h2>
+    <p>{{product.description}}</p>
+    <ng-template pTemplate="header">
+        <p-carousel [value]="product.imgs" [numVisible]="1"  [circular]="false">
+            <ng-template let-img pTemplate="item">
+                <img  [style]="{width: '100%', height: '18rem'}" src="{{img}}" >
+            </ng-template>
+        </p-carousel>
+    </ng-template>
+    <p>
+    </p>
+    <ng-template pTemplate="footer">
+        <!-- <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary"
+            [style]="{ 'margin-left': '.5em' }"></p-button> -->
+    </ng-template>
+</p-card>
