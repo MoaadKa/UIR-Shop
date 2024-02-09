@@ -1,0 +1,54 @@
+<div class="bg-white p-4 block">
+    <p class="text-gray-600 text-sm m-2 p-2 tracking-wider">Uir shop / Textile / </p>
+    <div class="bg-white m-2 p-3 flex">
+
+        <div *ngIf="productDetails.imgs" class="bg-white mr-4">
+            <img *ngFor="let img of productDetails.imgs; let i = index" [src]="img" alt="Product Image"
+                 class="cursor-pointer w-[90px] h-[90px] mb-3 rounded-md mx-2" (click)="changeLargeImage(i)">
+        </div>
+        
+        <div class="bg-white">
+            <img id="largeImage" [src]="largeImage" alt="Large Photo" class="min-w-[450px] h-[400px] rounded-xl font-medium">
+        </div>
+        
+
+        <div class="ml-20 mt-0 p-3 pt-0 block">
+            <div class="m-2">
+                <p class="text-6xl text-blue-1000"><b class="italic">UIR pride</b> MANCHES COURTES</p>
+                <p class="">{{productDetails.description}}</p>
+            </div>
+            <div>
+                <hr class="mb-4 w-full">
+                <p class="font-bold text-blue-1000 text-6xl m-4">{{productDetails.prixProduct}} DHS
+                    <hr class="mb-4 w-full">
+            </div>
+            <div>
+                <span class="mr-2 text-xl">Tailles :</span>
+                <button type="button"
+                    class="rounded-md border border-gray-300 px-3 py-1 bg-white text-sm hover:text-gray-500 mr-2">
+                    S</button>
+                <button type="button"
+                    class="rounded-md border border-gray-300 px-3 py-1 bg-white text-sm hover:text-gray-500 mr-2">
+                    M</button>
+                <button type="button"
+                    class="rounded-md border border-gray-300 px-3 py-1 bg-white text-sm hover:text-gray-500 mr-2">
+                    L</button>
+                <button type="button"
+                    class="rounded-md border border-gray-300 px-3 py-1 bg-white text-sm hover:text-gray-500 ">
+                    XL</button>
+
+            </div>
+            <select class="border rounded text-sm h-8 w-1 px-2 mr-4">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+
+            <button type="button" class="rounded-md border border-gray-300 px-20 py-1 bg-blue-500 text-black text-xl hover:text-gray-500 margin-top-20">J'achète</button>
+
+        </div>
+    </div>
+
+
+</div>
